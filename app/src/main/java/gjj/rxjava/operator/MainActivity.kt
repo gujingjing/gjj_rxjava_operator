@@ -10,6 +10,17 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        RxCreate.create()
+        //rx创建
+//        RxCreate.create()
+//        RxCreate.defer()
+//        RxCreate.empty()
+        //from
+//        RxCreate.from()
+//        RxCreate.interval()
+//        RxCreate.just()
+//        RxCreate.range()
+//        RxCreate.repeat()
+        RxCreate.timer()
+
     }
 }
