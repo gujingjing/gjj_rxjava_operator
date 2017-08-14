@@ -1,9 +1,7 @@
 package gjj.rxjava.operator.creaate
 
-import android.util.Log
+import gjj.rxjava.operator.RxUtil
 import rx.Observable
-import rx.functions.Action0
-import rx.functions.Action1
 import java.util.concurrent.TimeUnit
 
 /**
@@ -33,11 +31,11 @@ class RxCreate {
 
                 }
             })
-                    .subscribe(getDefultAction1(), getDefultErrorAction1(), getDefultCompleteAction0())
+                    .subscribe(RxUtil.getDefultAction1(), RxUtil.getDefultErrorAction1(), RxUtil.getDefultCompleteAction0())
         }
         fun defer(){
             Observable.defer { Observable.just("") }
-                    .subscribe(getDefultAction1(), getDefultErrorAction1(), getDefultCompleteAction0())
+                    .subscribe(RxUtil.getDefultAction1(), RxUtil.getDefultErrorAction1(), RxUtil.getDefultCompleteAction0())
         }
         /**
          * empty:创建一个不发送数据，但是正常终止的observable
@@ -47,14 +45,14 @@ class RxCreate {
          */
         fun empty(){
             Observable.empty<String>()
-                    .subscribe(getDefultAction1(), getDefultErrorAction1(), getDefultCompleteAction0())
+                    .subscribe(RxUtil.getDefultAction1(), RxUtil.getDefultErrorAction1(), RxUtil.getDefultCompleteAction0())
         }
         /**
          * from 将数组或者对象，生成新的observable发送出去
          */
         fun from(){
             Observable.from(arrayOf(1,2,3,4,5))
-                    .subscribe(getDefultAction1(), getDefultErrorAction1(), getDefultCompleteAction0())
+                    .subscribe(RxUtil.getDefultAction1(), RxUtil.getDefultErrorAction1(), RxUtil.getDefultCompleteAction0())
         }
         /**
          * Interval:
@@ -64,7 +62,7 @@ class RxCreate {
          */
         fun interval(){
             Observable.interval(1,TimeUnit.SECONDS)
-                    .subscribe(getDefultAction1(), getDefultErrorAction1(), getDefultCompleteAction0())
+                    .subscribe(RxUtil.getDefultAction1(), RxUtil.getDefultErrorAction1(), RxUtil.getDefultCompleteAction0())
         }
         /**
          * just
@@ -74,7 +72,7 @@ class RxCreate {
          */
         fun just(){
             Observable.just(1,2,3,4,5,6,7,8,9,10)
-                    .subscribe(getDefultAction1(), getDefultErrorAction1(), getDefultCompleteAction0())
+                    .subscribe(RxUtil.getDefultAction1(), RxUtil.getDefultErrorAction1(), RxUtil.getDefultCompleteAction0())
         }
         /**
          * range: 发送整数范围内的有序序列
@@ -83,7 +81,7 @@ class RxCreate {
          */
         fun range(){
             Observable.range(3,3)
-                    .subscribe(getDefultAction1(), getDefultErrorAction1(), getDefultCompleteAction0())
+                    .subscribe(RxUtil.getDefultAction1(), RxUtil.getDefultErrorAction1(), RxUtil.getDefultCompleteAction0())
         }
         /**
          * repeat
@@ -100,7 +98,7 @@ class RxCreate {
         fun repeat(){
             Observable.just(1)
                     .repeat(5)
-                    .subscribe(getDefultAction1(), getDefultErrorAction1(), getDefultCompleteAction0())
+                    .subscribe(RxUtil.getDefultAction1(), RxUtil.getDefultErrorAction1(), RxUtil.getDefultCompleteAction0())
         }
         /**
          * timer
@@ -108,41 +106,7 @@ class RxCreate {
          */
         fun timer(){
             Observable.timer(1,TimeUnit.SECONDS)
-                    .subscribe(getDefultAction1(), getDefultErrorAction1(), getDefultCompleteAction0())
-        }
-
-
-
-
-
-        /**
-         * defultAction1
-         */
-        fun getDefultAction1():Action1<Any>{
-
-            return Action1 {
-                t: Any? ->
-                Log.e(TAG, t?.toString())
-            }
-        }
-        /**
-         * defultErrorAction1
-         */
-        fun getDefultErrorAction1():Action1<Throwable>{
-
-            return Action1 {
-                error ->
-                Log.e(TAG, error.toString())
-            }
-        }
-        /**
-         * defultComplete
-         */
-        fun getDefultCompleteAction0():Action0{
-
-            return Action0 {
-                Log.e(TAG, "complete")
-            }
+                    .subscribe(RxUtil.getDefultAction1(), RxUtil.getDefultErrorAction1(), RxUtil.getDefultCompleteAction0())
         }
     }
 }

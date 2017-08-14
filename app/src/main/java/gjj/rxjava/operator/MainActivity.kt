@@ -2,6 +2,7 @@ package gjj.rxjava.operator
 
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import gjj.rxjava.operator.conversion.RxConversion
 import gjj.rxjava.operator.creaate.RxCreate
 
 class MainActivity : AppCompatActivity() {
@@ -20,7 +21,10 @@ class MainActivity : AppCompatActivity() {
 //        RxCreate.just()
 //        RxCreate.range()
 //        RxCreate.repeat()
-        RxCreate.timer()
+//        RxCreate.timer()
+
+        //conversion
+        RxConversion.buffer()
 
     }
 }
