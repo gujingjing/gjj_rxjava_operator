@@ -1,8 +1,10 @@
 package gjj.rxjava.operator
 
 import android.util.Log
+import rx.Observable
 import rx.functions.Action0
 import rx.functions.Action1
+import rx.schedulers.Schedulers
 
 /**
  * 作者：l on 2017/8/14 18:00
@@ -65,6 +67,21 @@ class RxUtil {
             return Action0 {
                 Log.e(TAG, "complete")
             }
+        }
+        /**
+         * timerObservable
+         */
+        fun getTimerObservable():Observable<Int>{
+            return Observable.create<Int> {
+                subscriber ->
+                for (i in 1..5) {
+                    subscriber.onNext(i)
+                    Thread.sleep(200)
+                }
+
+                subscriber.onCompleted()
+            }
+                    .subscribeOn(Schedulers.io())
         }
     }
 }

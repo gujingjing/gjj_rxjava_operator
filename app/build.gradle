@@ -18,6 +18,9 @@ android {
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+        // Enabling multidex support.
+        multiDexEnabled true
     }
     buildTypes {
         release {
@@ -31,7 +34,7 @@ dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     testImplementation 'junit:junit:4.12'
     implementation 'com.android.support:appcompat-v7:25.0.0'
-
+    compile 'com.android.support:multidex:1.0.1'
     compile "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
 
     //rxandroid2

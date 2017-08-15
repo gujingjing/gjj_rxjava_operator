@@ -2,10 +2,7 @@ package gjj.rxjava.operator
 
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
-import gjj.rxjava.operator.conversion.RxConversion
-import gjj.rxjava.operator.creaate.RxCreate
-import gjj.rxjava.operator.filter.RxFilter
-import gjj.rxjava.operator.math.RxMath
+import gjj.rxjava.operator.assist.RxAssist
 
 class MainActivity : AppCompatActivity() {
 
@@ -51,6 +48,23 @@ class MainActivity : AppCompatActivity() {
 //        RxFilter.single()
 //        RxFilter.ignoreElements()
 //        RxFilter.sample()
-        RxFilter.skip()
+//        RxFilter.skip()
+
+        //combine
+//        RxCombine.merge()
+//        RxCombine.zip()
+
+        //assist
+//        RxAssist.delay()
+//        RxAssist.doEatch()
+//        RxAssist.timeout()
+//        RxAssist.timestamp()
+//        RxAssist.blokingObservable()
+        RxAssist.toList()
+//        RxAssist.toMap()
+
+
+
+
     }
 }

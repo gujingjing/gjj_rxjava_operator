@@ -1,4 +1,4 @@
-package gjj.rxjava.operator.creaate
+package gjj.rxjava.operator.create
 
 import gjj.rxjava.operator.RxUtil
 import rx.Observable
