@@ -1,11 +1,13 @@
 package gjj.rxjava.operator;
 
+import android.os.CountDownTimer;
 import android.util.Log;
 
 import java.lang.reflect.Array;
 import java.util.List;
 
 import rx.Observable;
+import rx.Subscriber;
 import rx.functions.Action1;
 
 /**
@@ -36,5 +38,20 @@ public class Test {
                         Log.e("",""+i);
                     }
                 }, throwable -> {});
+        new CountDownTimer(10000, 1000) {
+            @Override
+            public void onTick(long millisUntilFinished) {
+
+            }
+
+            @Override
+            public void onFinish() {
+
+            }
+        }.start();
+        Observable.just(1)
+                .sample(Observable.create((Observable.OnSubscribe<String>) subscriber -> {
+
+                }));
     }
 }

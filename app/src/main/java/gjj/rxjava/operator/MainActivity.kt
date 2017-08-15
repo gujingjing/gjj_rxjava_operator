@@ -4,6 +4,8 @@ import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import gjj.rxjava.operator.conversion.RxConversion
 import gjj.rxjava.operator.creaate.RxCreate
+import gjj.rxjava.operator.filter.RxFilter
+import gjj.rxjava.operator.math.RxMath
 
 class MainActivity : AppCompatActivity() {
 
@@ -24,7 +26,31 @@ class MainActivity : AppCompatActivity() {
 //        RxCreate.timer()
 
         //conversion
-        RxConversion.buffer()
+//        RxConversion.buffer()
+//        RxConversion.flatMap()
+//        RxConversion.concatMap()
+//        RxConversion.switchMap()
+//        RxConversion.map()
+//        RxConversion.cast()
 
+        //math
+//        RxMath.scan()
+//        RxMath.count()
+//        RxMath.concat()
+//        RxMath.reduce()
+//        RxMath.collect()
+
+        //filter
+//        RxFilter.debounce()
+//        RxFilter.distinct()
+//        RxFilter.distinctUntilChange()
+//        RxFilter.element()
+//        RxFilter.filter()
+//        RxFilter.ofType()
+//        RxFilter.first()
+//        RxFilter.single()
+//        RxFilter.ignoreElements()
+//        RxFilter.sample()
+        RxFilter.skip()
     }
 }
