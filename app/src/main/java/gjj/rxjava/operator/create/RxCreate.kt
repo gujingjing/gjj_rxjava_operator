@@ -2,6 +2,7 @@ package gjj.rxjava.operator.create
 
 import gjj.rxjava.operator.RxUtil
 import rx.Observable
+import java.util.concurrent.Future
 import java.util.concurrent.TimeUnit
 
 /**
@@ -53,6 +54,7 @@ class RxCreate {
         fun from(){
             Observable.from(arrayOf(1,2,3,4,5))
                     .subscribe(RxUtil.getDefultAction1(), RxUtil.getDefultErrorAction1(), RxUtil.getDefultCompleteAction0())
+
         }
         /**
          * Interval:

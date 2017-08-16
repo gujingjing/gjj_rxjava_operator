@@ -74,7 +74,7 @@ class RxUtil {
         fun getTimerObservable():Observable<Int>{
             return Observable.create<Int> {
                 subscriber ->
-                for (i in 1..5) {
+                for (i in 1..20) {
                     subscriber.onNext(i)
                     Thread.sleep(200)
                 }

@@ -214,30 +214,10 @@ class RxFilter {
          */
         fun sample(){
 
-            var observable=Observable.create<String> {
-                subscriber->
-                //每一秒钟发射一次
-                object :CountDownTimer(3000,1000){
-                    override fun onFinish() {
-                        subscriber.onCompleted()
-                    }
-                    override fun onTick(millisUntilFinished: Long) {
-                        subscriber.onNext(""+millisUntilFinished)
-                    }
-
-                }
-            }
-            Observable.create<Int> {
-                subscriber->
-                for (i in 1..40){
-                    subscriber.onNext(i)
-                    Thread.sleep(200)
-                }
-                subscriber.onCompleted()
-            }
-//                    .sample(1000,TimeUnit.MILLISECONDS)
+            RxUtil.getTimerObservable()
+                    .sample(1000,TimeUnit.MILLISECONDS)
 //                    .throttleLast(1000,TimeUnit.MILLISECONDS)
-                    .throttleFirst(1000,TimeUnit.MILLISECONDS)
+//                    .throttleFirst(1000,TimeUnit.MILLISECONDS)
 //                    .sample(observable)
 //                    .sample(Observable.create(object :Observable.OnSubscribe<String>{
 //                        override fun call(t: Subscriber<in String>?) {

@@ -3,6 +3,8 @@ package gjj.rxjava.operator
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import gjj.rxjava.operator.assist.RxAssist
+import gjj.rxjava.operator.condition.RxCondition
+import gjj.rxjava.operator.filter.RxFilter
 
 class MainActivity : AppCompatActivity() {
 
@@ -60,8 +62,16 @@ class MainActivity : AppCompatActivity() {
 //        RxAssist.timeout()
 //        RxAssist.timestamp()
 //        RxAssist.blokingObservable()
-        RxAssist.toList()
+//        RxAssist.toList()
 //        RxAssist.toMap()
+
+        //condition
+//        RxCondition.all()
+//        RxCondition.contains()
+//        RxCondition.exists()
+//        RxCondition.skipUntil()
+//        RxCondition.skipWhile()
+        RxCondition.takeUtil()
 
 
 
